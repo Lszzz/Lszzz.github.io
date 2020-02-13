@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>latex公式总结</title>
+      <link href="/2020/02/13/latex%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93/"/>
+      <url>/2020/02/13/latex%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93/</url>
+      
+        <content type="html"><![CDATA[<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>在博客撰写的过程中不免会遇到各种数理公式的使用，因而当撰写markdown文档时如需添加数学公式，可以使用两个美元符号$$包裹TeX或LaTeX格式的数学公式来实现，当提交之后，文章页会调用Mathjax对数学公式进行渲染。  </p><h1 id="公式的具体实现"><a href="#公式的具体实现" class="headerlink" title="公式的具体实现"></a>公式的具体实现</h1><p>在行中的公式可以采用单$表示：  </p><blockquote><p>$ 数学公式 $   </p></blockquote><p>独立公式则采用双$表示：   </p><blockquote><p>$$ 数学公式 $$  </p></blockquote><h2 id="声调以及变音符号"><a href="#声调以及变音符号" class="headerlink" title="声调以及变音符号"></a>声调以及变音符号</h2><blockquote><p>\dot{a}, \ddot{a}, \acute{a}, \grave{a}  </p></blockquote><p>$ dot{a}, \ddot{a}, \acute{a}, \grave{a} $  </p><blockquote><p>\check{a}, \breve{a}, \tilde{a}, \bar{a}  </p></blockquote><p>$ \check{a}, \breve{a}, \tilde{a}, \bar{a} $  </p><blockquote><p>\hat{a}, \widehat{a}, \vec{a}  </p></blockquote><p>$ \hat{a}, \widehat{a}, \vec{a} $  </p><h2 id="标准函数"><a href="#标准函数" class="headerlink" title="标准函数"></a>标准函数</h2><p>指数：  </p><blockquote><p>exp_a b =a^b , \exp b =e^b, 10^m  </p></blockquote><p>$exp_a b= a^b, \exp b =e^b, 10^m $  </p><p>对数：  </p><blockquote><p>\ln c, \lg d = \log e, \log_{底数} 指数   </p></blockquote><p>$\ln c, \lg d= \log e, \log_{2} 3 $  </p><p>三角函数：  </p><blockquote><p>\sin a, \cos b, \tan c, \cot d, \cec e, \csc f, \arcsin a, \arccos b, \arctan c, \arccot d  </p></blockquote><p>$\sin a, \cos b, \tan c, \cot d, \cec e, \csc f, \arcsin a, \arccos b, \arctan c, \arccot d $  </p><h2 id="符号函数，绝对值："><a href="#符号函数，绝对值：" class="headerlink" title="符号函数，绝对值："></a>符号函数，绝对值：</h2><blockquote><p>\sgn r, \left\vert s \right\vert  </p></blockquote><p>$\sgn r, \left\vert s \right\vert$  </p><h2 id="最值极限："><a href="#最值极限：" class="headerlink" title="最值极限："></a>最值极限：</h2><blockquote><p>\min(x,y) ,\max(x,y)  </p></blockquote><p>$\min(x,y) ,\max(x,y)$  </p><blockquote><p>\min x, \min y, \inf s, \sup t  </p></blockquote><p>$\min x, \min y, \inf s, \sup t$  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Markdown </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> latex </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>康托展开</title>
       <link href="/2020/02/10/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/"/>
       <url>/2020/02/10/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80/</url>

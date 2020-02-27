@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>mysql命令</title>
+      <link href="/2020/02/27/mysql%E5%91%BD%E4%BB%A4/"/>
+      <url>/2020/02/27/mysql%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h1 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h1><p> 登录到本机上的mysql:    </p><blockquote><p>在配置好环境变量的前提下，打开命令行窗口：<br>mysql -h localhost -u root -p<br>随后输入mysql密码。  </p></blockquote><p>创建数据库：</p><blockquote><p>create database &lt;数据库名&gt;  </p></blockquote><p>显示数据库：  </p><blockquote><p>show databases;  </p></blockquote><p>删除数据库：  </p><blockquote><p>drop database &lt;数据库名&gt;  </p></blockquote><p>删除一个不确定是否存在的数据库名：  </p><blockquote><p>drop database if exists tmp  </p></blockquote><p>如果不存在此数据库的话，会返回一个警告显示此数据库不存在。  </p><p>连接数据库：  </p><blockquote><p>use &lt;数据库名&gt;  </p></blockquote><p>显示当前正在使用的数据库:  </p><blockquote><p>select database();  </p></blockquote><p>创建数据表：   </p><blockquote><p>create table&lt;表名&gt;）(&lt;字段名1&gt; &lt;类型1&gt; [,..&lt;字段名n&gt; &lt;类型n&gt;])  </p></blockquote><p>向数据表中添加数据：  </p><blockquote><p>insert into 表名 values(…..);//insert一次只能插入一条记录。   </p></blockquote><p>查看表中所有数据：  </p><blockquote><p>select *from 表名  </p></blockquote><p>查询固定某项的数据：  </p><blockquote><p>select 类型 （as 别名） from 表名  </p></blockquote><p>如果想要使得到的数据去重：  </p><blockquote><p>select distinct 类型 from 表名  </p></blockquote><p>删除表中数据:  </p><blockquote><p>delete from 表名 where 类型名 =…  </p></blockquote><p>想要将某些类型进行拼接输出有如下函数：  </p><blockquote><p>select concat(…,…,…) as …(别名) from emp;  </p></blockquote><p>修改表中数据:  </p><blockquote><p>update 表名 set 字段=新值 where 条件<br>update myclass set name=’we’ where id=1;  </p></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> mysql </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>并查集</title>
       <link href="/2020/02/22/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
       <url>/2020/02/22/%E5%B9%B6%E6%9F%A5%E9%9B%86/</url>

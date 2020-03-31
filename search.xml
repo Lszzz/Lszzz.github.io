@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>matlab基础（一）</title>
+      <link href="/2020/03/31/matlab%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+      <url>/2020/03/31/matlab%E5%9F%BA%E7%A1%80%EF%BC%88%E4%B8%80%EF%BC%89/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基本操作与矩阵输入"><a href="#基本操作与矩阵输入" class="headerlink" title="基本操作与矩阵输入"></a>基本操作与矩阵输入</h1><h2 id="Embedding-Functions（嵌入和分布）"><a href="#Embedding-Functions（嵌入和分布）" class="headerlink" title="Embedding Functions（嵌入和分布）"></a>Embedding Functions（嵌入和分布）</h2><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">matlab</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sin(cos(pi))//embedded(嵌入式)</span><br><span class="line"><span class="built_in">cos</span>(<span class="built_in">pi</span>)</span><br><span class="line"><span class="built_in">sin</span>(<span class="built_in">ans</span>)</span><br></pre></td></tr></table></figure></div><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>Matlab区分大小写；</p><p>Matlab default type 是double；</p><p>使用whos可以看到变量的具体数值类型；</p><p>Key words:</p><ul><li>ans</li><li>Inf</li><li>eps:2.2204e-016</li><li>NaN:not a number</li><li>pi:π</li></ul><p>使用iskeyword查看</p><p>Matlab Calling Priority：调用顺序</p><p>High———&gt;Low</p><p>Variable—&gt; Built-in function（内建函数（print））—&gt;  Subfunction —&gt; Private function(</p><ul><li>MEX-file</li><li>P-file</li><li>M-file</li></ul><p>)</p><p>clear+variable（删除workspace的变量）</p><h2 id="Format（格式）"><a href="#Format（格式）" class="headerlink" title="Format（格式）"></a>Format（格式）</h2><p>Numeric Display “Format”:</p><p>格式显示：<br>format long</p><p>pi</p><p>format rat</p><p>ans=1/2+1/3</p><p>得5/6</p><p>显示的是long形式的pi；</p><p>Format：</p><ul><li>short</li><li>long</li><li>shortE(短科学计数法)</li><li>longE(长科学技数法)</li><li>rat(以分数形式显示)</li><li>bank（保留为2位有理数）（3.14）</li><li>hex     （16进制）</li></ul><h2 id="矩阵"><a href="#矩阵" class="headerlink" title="矩阵"></a>矩阵</h2><p>A(8);列优先第8个</p><p>A([1 2 3]);列优先第1,2,3个</p><p>A([1 3;1 3])==A([1 3]) A([1 3])</p><p>A([1 3], [1 3]) ；，之前的[1 3]是行，之后的是[1 3]是列，输出1,3行，1,3列的交集按列优先输出；</p><h3 id="Colon-Operator（分号）"><a href="#Colon-Operator（分号）" class="headerlink" title="Colon Operator（分号）"></a>Colon Operator（分号）</h3><p>输入1-100的值：<br>A=[1:100];</p><p>j:k  ====&gt; [j,j+1,j+2,…,k]</p><p>j:i:k====&gt;[j,j+i,….j+m*i](不一定能到k)</p><p>a(3,:)第三行的所有</p><h3 id="Array-Concatenation-增广矩阵"><a href="#Array-Concatenation-增广矩阵" class="headerlink" title="Array Concatenation(增广矩阵)"></a>Array Concatenation(增广矩阵)</h3><p>a=[1,2,3,4;1,2,3,4];</p><p>b=[1,1,1,1,;1,1,1,1];</p><p>[a b]=(左右联合)</p><p>1 2 3 4 1 1 1 1</p><p>1 2 3 4 1 1 1 1</p><p>[a:b]=(横着)</p><p>=1 2 3 4 1 2 3 4 1 1 1 1 1 1 1 1</p><h3 id="Array-Manipulaiton"><a href="#Array-Manipulaiton" class="headerlink" title="Array Manipulaiton"></a>Array Manipulaiton</h3><p>矩阵叉乘*需要第一个矩阵的列等于第二个行</p><p>点乘是.*是对应元素相乘</p><p>A^2=A*A</p><p>A.^2是每一个元素取二次方</p><h3 id="Some-Special-Matrix"><a href="#Some-Special-Matrix" class="headerlink" title="Some Special Matrix"></a>Some Special Matrix</h3><p>linspace(): linearly spaced vectors：均分指令：linspace(1,5,4)将1-5分成4份</p><p>eye(n): n*n identity matric :单位矩阵</p><p>zeros(n1,n2):n1*n2 zero matrix</p><p>ones(n1,n2) 1矩阵</p><p>diag():对角线矩阵diag([1,2,3]):以1,2,3为对角的矩阵;</p><h3 id="Some-Matrix-Related-Functions"><a href="#Some-Matrix-Related-Functions" class="headerlink" title="Some Matrix Related Functions"></a>Some Matrix Related Functions</h3><p>max（a）:每列的最大值组成的集合</p><p>max(max(a)):最大的值；</p><p>sum(a);//每列的和的集合；所有的和sum(sum(a));</p><p>mean(a);</p><p>sort(a);//对列为单位尽行排列</p><p>sortrows(a);//将行进行比较；先比每一行的第一个相等再比第二个；</p><p>size(a);行和列[i j]=size(a);</p><p>length(a);指的是vector，指的是列数</p><p>find(a);find(a==5)找5在第几个位置</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> matlab </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> matlab </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Matlab灰度图像处理</title>
       <link href="/2020/03/25/Matlab%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/"/>
       <url>/2020/03/25/Matlab%E7%81%B0%E5%BA%A6%E5%9B%BE%E5%83%8F%E5%A4%84%E7%90%86/</url>

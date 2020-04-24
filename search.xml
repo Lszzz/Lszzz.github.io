@@ -8,9 +8,21 @@
       <link href="/2020/04/24/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/"/>
       <url>/2020/04/24/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h1 id="辗转相除法"><a href="#辗转相除法" class="headerlink" title="辗转相除法"></a>辗转相除法</h1><h2 id="辗转相除法-1"><a href="#辗转相除法-1" class="headerlink" title="辗转相除法"></a>辗转相除法</h2><p>例子：<br>求 86和32 的最大公约数：<br>（86,32）：</p><p><strong>86=32*2+22；</strong></p><p>假设86和32的最大公约数为m，则86%m==0,32%m==0——————–&gt;22%m==0</p><p>可以转化为32和22的最大公约数（32,22）：</p><p><strong>32=1*22+10；</strong></p><p>同理转化为22,10的最大公约数（22,10）：</p><p><strong>22=2*10+2；</strong></p><p>转化为10和2的最大公约数（10,2）：<br><strong>10=5*2；</strong></p><p>变为（2,0）；</p><p>所以最大公约数为<strong>2</strong>；</p><p>可得程序：</p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">c++</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(b==<span class="number">0</span>) <span class="keyword">return</span> a;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">return</span> gcd(b,a%b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><h2 id="拓展欧几里得"><a href="#拓展欧几里得" class="headerlink" title="拓展欧几里得"></a>拓展欧几里得</h2><p>裴蜀定理定义：给定两个整数a和b，假设他们的最大公约数是p，那么下面(x,y)方程有整数解当且仅当n是p的倍数：</p><p>一般性证明：</p><blockquote><p>设a&gt;b.</p><p>当b=0,gcd(a,b)=a.此时x=1,y=0;</p><p>当ab!=0时</p><p>设ax1+by1=gcd(a,b);</p><p>bx2+(a mod b)y2=gcd(b, a mod b);</p><p>根据朴素的欧几里得原理有gcd(a,b)=gcd(b,a mod b);</p><p>所以：ax1+by1=bx2+(a mod b)y2;</p><p>即ax1+by1=bx2+(a-(a/b)<em>b)y2=ay2+bx2-(a/b)\</em>by2;</p><p>由恒等定理可以得到：x1=y2;y1=x2-(a/b)*y2;</p><p>因此x1,y1的值是基于x2,y2的</p></blockquote><p>由上面的证明可知，不断的递归，其结果肯定有个时候b为0，此时递归可以结束：</p><div class="code-area-wrap"><div class="highlight-tools"><i class="fa fa-angle-down code-expand" aria-hidden="true"></i><div class="code_lang">cpp</div><div class="copy-notice"></div><i class="fa fa-clipboard" aria-hidden="true"></i></div><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">e_gcd</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> &amp;x,<span class="keyword">int</span> &amp;y)</span></span>&#123;</span><br><span class="line"><span class="keyword">if</span>(!b)&#123;</span><br><span class="line">x=<span class="number">1</span>;y=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> gcd=e_gcd(b,a%b,y,x);</span><br><span class="line">y-=a/b*x;</span><br><span class="line"><span class="keyword">return</span> gcd;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
       
       
+      <categories>
+          
+          <category> 算法与数据结构 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 欧几里得算法 </tag>
+            
+        </tags>
       
     </entry>
     
